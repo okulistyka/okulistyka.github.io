@@ -8,7 +8,7 @@ html {
 /* 01 Font family */
 
 body {
-  font-family: "Courier New", "Helvetica", sans-serif;
+  font-family: "Courier New", monospace;
 }
 
 /* 03 Spacing */
@@ -40,6 +40,18 @@ header h1, h5 {
 body {
   color: #c5ccce;
   background-color: #282f3a;
+}
+#eye {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#eye img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 h1,
