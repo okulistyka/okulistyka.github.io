@@ -123,6 +123,8 @@
 
             // Set new image on inactive (on top by changing z-index) so active remains visible
             inactive.style.backgroundImage = 'url("' + dataUrl + '")';
+            // Also set body background for iOS off viewport rendering
+            document.body.style.backgroundImage = 'url("' + dataUrl + '")';
             inactive.style.zIndex = '1';
             active.style.zIndex = '0';
 
