@@ -108,8 +108,9 @@
             if(!cssLayerA || !cssLayerB){
               cssLayerA = document.createElement('div');
               cssLayerB = document.createElement('div');
-                 const baseStyle = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background-repeat:repeat;background-position:0 0;-webkit-user-select:none;';
-                 cssLayerA.style.cssText = baseStyle + 'z-index:0;';
+                 // Use absolute positioning to cover viewport and extend past safe areas
+                 const baseStyle = 'position:fixed;top:0;left:0;bottom:0;right:0;pointer-events:none;background-repeat:repeat;background-position:0 0;background-size:auto;display:block;margin:0;padding:0;border:0;';
+                 cssLayerA.style.cssText = baseStyle + 'z-index:1;';
                  cssLayerB.style.cssText = baseStyle + 'z-index:0;';
               // Insert as first children so content overlays these layers
               document.body.insertBefore(cssLayerB, document.body.firstChild);
@@ -121,13 +122,9 @@
             const inactive = (cssActiveIndex === 0) ? cssLayerB : cssLayerA;
             const active = (cssActiveIndex === 0) ? cssLayerA : cssLayerB;
 
-            // Set new image on inactive (on top by changing z-index) so active remains visible
+            // Set new image on inactive, then bring it to front (higher z-index)
             inactive.style.backgroundImage = 'url("' + dataUrl + '")';
-            // Also set body background for iOS off viewport rendering
             document.body.style.backgroundImage = 'url("' + dataUrl + '")';
-            document.body.style.backgroundRepeat = 'repeat';
-            document.body.style.backgroundPosition = '0 0';
-            document.body.style.backgroundSize = 'auto';
             inactive.style.zIndex = '1';
             active.style.zIndex = '0';
 
