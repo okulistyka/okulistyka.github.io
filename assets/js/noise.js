@@ -108,7 +108,7 @@
             if(!cssLayerA || !cssLayerB){
               cssLayerA = document.createElement('div');
               cssLayerB = document.createElement('div');
-                 const baseStyle = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background-repeat:repeat;background-position:0 0;';
+                 const baseStyle = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background-repeat:repeat;background-position:0 0;-webkit-user-select:none;';
                  cssLayerA.style.cssText = baseStyle + 'z-index:0;';
                  cssLayerB.style.cssText = baseStyle + 'z-index:0;';
               // Insert as first children so content overlays these layers
@@ -125,6 +125,9 @@
             inactive.style.backgroundImage = 'url("' + dataUrl + '")';
             // Also set body background for iOS off viewport rendering
             document.body.style.backgroundImage = 'url("' + dataUrl + '")';
+            document.body.style.backgroundRepeat = 'repeat';
+            document.body.style.backgroundPosition = '0 0';
+            document.body.style.backgroundSize = 'auto';
             inactive.style.zIndex = '1';
             active.style.zIndex = '0';
 
