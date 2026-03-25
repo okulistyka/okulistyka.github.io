@@ -108,9 +108,9 @@
             if(!cssLayerA || !cssLayerB){
               cssLayerA = document.createElement('div');
               cssLayerB = document.createElement('div');
-              const baseStyle = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background-repeat:repeat;background-position:0 0;background-attachment:fixed;';
-              cssLayerA.style.cssText = baseStyle + 'z-index:0;';
-              cssLayerB.style.cssText = baseStyle + 'z-index:-1;';
+                 const baseStyle = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background-repeat:repeat;background-position:0 0;';
+                 cssLayerA.style.cssText = baseStyle + 'z-index:0;';
+                 cssLayerB.style.cssText = baseStyle + 'z-index:0;';
               // Insert as first children so content overlays these layers
               document.body.insertBefore(cssLayerB, document.body.firstChild);
               document.body.insertBefore(cssLayerA, document.body.firstChild);
@@ -132,14 +132,14 @@
             const img = new Image();
             img.onload = function(){
               // Reset stacking so the newly-active layer becomes the active one
-              inactive.style.zIndex = '0';
-              active.style.zIndex = '-1';
+                 inactive.style.zIndex = '0';
+                 active.style.zIndex = '0';
               cssActiveIndex = (cssActiveIndex === 0) ? 1 : 0;
             };
             img.onerror = function(){
               // On error, don't swap — keep previous image
               inactive.style.backgroundImage = 'none';
-              inactive.style.zIndex = '-1';
+                 inactive.style.zIndex = '0';
             };
             img.src = dataUrl;
           }catch(e){/* swallow toDataURL errors */}

@@ -15,7 +15,6 @@ html, body {
 
 body {
   font-family: "Courier New", monospace;
-  background-repeat:repeat;
 }
 
 /* 03 Spacing */
@@ -46,7 +45,8 @@ header h1, h5 {
 
 body {
   color: #c5ccce;
-  background-color: #0b0b0b;
+  background-color: transparent;
+  background-repeat: repeat;
   position: relative;
 }
 #eye {
@@ -70,7 +70,7 @@ footer,
 .padded,
 #eye {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 /* ensure main content sits above the animated noise canvas */
