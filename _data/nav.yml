@@ -1,6 +1,6 @@
-- name: Posts
-  link: /posts
-- name: Categories
-  link: /categories/
-- name: About & Contact
+- name: Transmissions
+  link: /Transmissions
+- name: Channels
+  link: /channels/
+- name: Guide
   link: /

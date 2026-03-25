@@ -5,6 +5,12 @@ html {
   font-size: 18px;
 }
 
+/* ensure root elements occupy full height and remove default body margin to avoid scrollbars */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 /* 01 Font family */
 
 body {
@@ -39,7 +45,8 @@ header h1, h5 {
 
 body {
   color: #c5ccce;
-  background-color: #282f3a;
+  background-color: #0b0b0b;
+  position: relative;
 }
 #eye {
   width: 100%;
@@ -52,6 +59,35 @@ body {
   max-height: 100%;
   max-width: 100%;
   object-fit: contain;
+}
+
+/* ensure main chrome sits above the noise canvas */
+header,
+nav,
+.main-content,
+footer,
+.padded,
+#eye {
+  position: relative;
+  z-index: 1;
+}
+
+/* ensure main content sits above the animated noise canvas */
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* canvas used by assets/js/noise.js; covers viewport */
+#noise-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  display: block;
 }
 
 h1,
