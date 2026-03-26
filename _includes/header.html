@@ -1,8 +1,12 @@
 
 <div class="header">
-    
-    <h1>{{ site.name }}</h1>
-    <br>
+    <!DOCTYPE html>
+
+    <div id="stage">
+        <canvas id="c"></canvas>
+        <div id="blinking-screen-text"><h1>{{ site.name }}</h1></div>
+    </div>
+    <script src="{{ site.baseurl }}/assets/js/blinking-screen.js"></script>
     <h5><i>starting broadcast</i></h5>
     <br>
     {% include nav.html %}
