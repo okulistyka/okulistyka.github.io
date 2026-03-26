@@ -2,12 +2,12 @@
 const canvas = document.getElementById('c');
 const ctx    = canvas.getContext('2d');
 
-const W = 400;
+const W = Math.min(window.innerWidth, 350);
 const H = 50;
 canvas.width  = W;
 canvas.height = H;
 
-const FONT_SIZE = 36;
+const FONT_SIZE = Math.round(36 * (W / 350));
 const FONT      = `${FONT_SIZE}px 'Courier New', Courier, monospace`;
 const LINE_GAP  = FONT_SIZE * 1.15;
 const LINES     = ['blinking screen'];
