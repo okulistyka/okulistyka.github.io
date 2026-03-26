@@ -50,6 +50,12 @@ document.fonts.ready.then(() => {
     });
   }
 
+  // Create temporary canvas for blur effect
+  const blurCanvas = document.createElement('canvas');
+  blurCanvas.width = W;
+  blurCanvas.height = H;
+  const blurCtx = blurCanvas.getContext('2d');
+
   function drawSplit(dx, dy) {
     // Clear output buffer (alpha = 0 for transparency)
     for (let i = 0; i < out.length; i += 4) {
@@ -71,7 +77,14 @@ document.fonts.ready.then(() => {
         }
       }
     }
-    ctx.putImageData(outImg, 0, 0);
+    // Draw to temporary canvas
+    blurCtx.clearRect(0, 0, W, H);
+    blurCtx.putImageData(outImg, 0, 0);
+    // Apply blur filter to main canvas and draw the temporary canvas
+    ctx.clearRect(0, 0, W, H);
+    ctx.filter = 'blur(2px)';
+    ctx.drawImage(blurCanvas, 0, 0);
+    ctx.filter = 'none';
   }
 
   // ── State machine: 'static' | 'pulse' ────────────────────────
