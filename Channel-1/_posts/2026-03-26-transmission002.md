@@ -9,6 +9,7 @@ Today was a Decision Day.
 Every once in a while, I make a decision to better my life. Start journalling. Stop drinking soda. Spend less time on my phone. 
 
 Today it’s the last one. I deleted two apps that do nothing but waste my time. Restricted how long others can be open. Unfortunately for me I usually don’t stick with my decisions for long. The decision itself gets blurry. Goes far away. I stop remembering it. Making the decision itself does not help. Making the same decision over and over again, every day is necessary for it to matter and to work. 
+
 The constant degradation of will. 
 
 Like building a sandcastle a little too close to the water. 
