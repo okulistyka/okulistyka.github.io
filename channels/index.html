@@ -2,7 +2,7 @@
 layout: default 
 ---
 
-<h2>Categories</h2>
+
 {% for category in site.categories %}
     <h3 class="category-header"><b>{{category | first}}</b></h3>
         {% for post in category[1] limit:3 %}
