@@ -150,3 +150,41 @@ canvas { display: block; }
   padding: 0;
   font-size: inherit;
 }
+
+/* Vignette corners: place the same PNG in each corner, rotated 0/90/180/270deg */
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+.vignette .vig {
+  position: absolute;
+  width: 12vw;
+  max-width: 220px;
+  min-width: 60px;
+  height: auto;
+  display: block;
+  opacity: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.vig-top-left {
+  top: 0;
+  left: 0;
+}
+.vig-top-right {
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+}
+.vig-bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: scale(-1, -1);
+}
+.vig-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleY(-1);
+}
